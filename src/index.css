@@ -7,3 +7,9 @@
     @apply text-darkSlate;
   }
 }
+
+@layer components {
+  .heading-tertiary {
+    @apply text-2xl font-medium;
+  }
+}
