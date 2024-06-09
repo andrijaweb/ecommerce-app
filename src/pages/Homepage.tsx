@@ -1,3 +1,9 @@
+import {
+  HiOutlineArrowUturnLeft,
+  HiOutlineShieldCheck,
+  HiOutlineTruck,
+} from "react-icons/hi2";
+
 const Homepage = () => {
   return (
     <div>
@@ -49,25 +55,69 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section>
-        <h4 className="text-lg font-medium uppercase text-textGray">
-          How it Works
-        </h4>
-        <div>
-          <article className="flex items-center">
-            <figure>
-              <h2>Browse Our Collection</h2>
-              <p>
-                Explore our extensive range of products from the comfort of your
-                home. Whether you're looking for the latest fashion,
-                cutting-edge electronics, or everyday essentials, our intuitive
-                interface makes it easy to find exactly what you need.
-              </p>
-            </figure>
-            <div className="max-w-md">
-              <img src="/how-it-works-1.jpg" alt="person buying online" />
+      <section className="flex items-center justify-between mx-auto py-16">
+        <div className="w-1/2 pr-8">
+          <h4 className="text-lg font-medium uppercase text-textGray mb-5">
+            What We Offer
+          </h4>
+          <h2 className="text-5xl font-bold text-darkSlate mb-6">
+            Experience Unmatched Shopping Convenience
+          </h2>
+          <p className="text-textGray mb-8 max-w-xl">
+            Discover a seamless shopping experience with our top-notch services
+            and products. We are dedicated to bringing you the best value for
+            your money, making shopping easier and more enjoyable.
+          </p>
+          <div className="space-y-8">
+            <div className="flex gap-5">
+              <span className="p-2.5 rounded-full bg-lightGray self-start">
+                <HiOutlineTruck className="text-3xl" />
+              </span>
+              <div>
+                <h5 className="text-xl font-semibold text-gray-900">
+                  Free Shipping
+                </h5>
+                <p className="text-gray-600">
+                  Enjoy free shipping on all orders over $50.
+                </p>
+              </div>
             </div>
-          </article>
+
+            <div className="flex gap-5">
+              <span className="p-2.5 rounded-full bg-lightGray self-start">
+                <HiOutlineShieldCheck className="text-3xl" />
+              </span>
+              <div>
+                <h5 className="text-xl font-semibold text-gray-900">
+                  24/7 Support
+                </h5>
+                <p className="text-gray-600">
+                  Our support team is here to help you any time of the day.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5">
+              <span className="p-2.5 rounded-full bg-lightGray self-start">
+                <HiOutlineArrowUturnLeft className="text-3xl" />
+              </span>
+              <div>
+                <h5 className="text-xl font-semibold text-gray-900">
+                  Easy Returns
+                </h5>
+                <p className="text-gray-600">
+                  Hassle-free returns within 30 days of purchase.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/2 pl-8">
+          <img
+            src="/person-buying-online.jpg"
+            alt="Shopping Experience"
+            className="w-full h-auto rounded-lg"
+          />
         </div>
       </section>
     </div>
