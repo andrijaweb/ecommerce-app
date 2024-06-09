@@ -9,8 +9,16 @@
 }
 
 @layer components {
+  .heading-primary {
+    @apply text-6xl font-black;
+  }
+
   .heading-tertiary {
     @apply text-2xl font-medium;
+  }
+
+  .heading-quaternary {
+    @apply text-lg font-medium uppercase text-textGray;
   }
 
   .image-mini {

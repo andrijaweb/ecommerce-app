@@ -3,13 +3,14 @@ import {
   HiOutlineShieldCheck,
   HiOutlineTruck,
 } from "react-icons/hi2";
+import Feature from "../components/Feature";
 
 const Homepage = () => {
   return (
     <div>
       <section className="flex items-center justify-between gap-16 pb-16">
         <div className="max-w-screen-sm space-y-5">
-          <h1 className="text-6xl font-black">
+          <h1 className="heading-primary">
             Bring your shopping to the next{" "}
             <span className="text-slateTeal">LEVEL.</span>
           </h1>
@@ -31,35 +32,19 @@ const Homepage = () => {
       </section>
 
       <section className="text-center py-16">
-        <h4 className="text-lg font-medium uppercase text-textGray">
-          Get Introduced
-        </h4>
+        <h4 className="heading-quaternary text-textGray">Get Introduced</h4>
         <div className="max-w-5xl mx-auto text-6xl font-thin leading-[80px]">
           Shop confidently with
-          <a
-            style={{
-              transition:
-                "border-radius 400ms cubic-bezier(.25, .46, .45, .94), border-color 400ms cubic-bezier(.25, .46, .45, .94)",
-            }}
-            className="bg-[url(/bike.jpg)] image-mini"
-          ></a>
+          <a className="bg-[url(/bike.jpg)] image-mini"></a>
           our online store, where we prioritize saving your time, easing{" "}
-          <a
-            style={{
-              transition:
-                "border-radius 400ms cubic-bezier(.25, .46, .45, .94), border-color 400ms cubic-bezier(.25, .46, .45, .94)",
-            }}
-            className="bg-[url(/sofa.jpeg)] image-mini"
-          ></a>{" "}
-          your stress, and ensuring you get the best value for your money.
+          <a className="bg-[url(/sofa.jpeg)] image-mini"></a> your stress, and
+          ensuring you get the best value for your money.
         </div>
       </section>
 
       <section className="flex items-center justify-between mx-auto py-16">
         <div className="w-1/2 pr-8">
-          <h4 className="text-lg font-medium uppercase text-textGray mb-5">
-            What We Offer
-          </h4>
+          <h4 className="heading-quaternary mb-5">What We Offer</h4>
           <h2 className="text-5xl font-bold text-darkSlate mb-6">
             Experience Unmatched Shopping Convenience
           </h2>
@@ -69,47 +54,23 @@ const Homepage = () => {
             your money, making shopping easier and more enjoyable.
           </p>
           <div className="space-y-8">
-            <div className="flex gap-5">
-              <span className="p-2.5 rounded-full bg-lightGray self-start">
-                <HiOutlineTruck className="text-3xl" />
-              </span>
-              <div>
-                <h5 className="text-xl font-semibold text-gray-900">
-                  Free Shipping
-                </h5>
-                <p className="text-gray-600">
-                  Enjoy free shipping on all orders over $50.
-                </p>
-              </div>
-            </div>
+            <Feature
+              icon={HiOutlineTruck}
+              title="Free Shipping"
+              description="Enjoy free shipping on all orders over $50."
+            />
 
-            <div className="flex gap-5">
-              <span className="p-2.5 rounded-full bg-lightGray self-start">
-                <HiOutlineShieldCheck className="text-3xl" />
-              </span>
-              <div>
-                <h5 className="text-xl font-semibold text-gray-900">
-                  24/7 Support
-                </h5>
-                <p className="text-gray-600">
-                  Our support team is here to help you any time of the day.
-                </p>
-              </div>
-            </div>
+            <Feature
+              icon={HiOutlineShieldCheck}
+              title="24/7 Support"
+              description="Our support team is here to help you any time of the day."
+            />
 
-            <div className="flex gap-5">
-              <span className="p-2.5 rounded-full bg-lightGray self-start">
-                <HiOutlineArrowUturnLeft className="text-3xl" />
-              </span>
-              <div>
-                <h5 className="text-xl font-semibold text-gray-900">
-                  Easy Returns
-                </h5>
-                <p className="text-gray-600">
-                  Hassle-free returns within 30 days of purchase.
-                </p>
-              </div>
-            </div>
+            <Feature
+              icon={HiOutlineArrowUturnLeft}
+              title="Easy Returns"
+              description="Hassle-free returns within 30 days of purchase."
+            />
           </div>
         </div>
         <div className="w-1/2 pl-8">
