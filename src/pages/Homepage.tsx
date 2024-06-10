@@ -4,7 +4,7 @@ import {
   HiOutlineTruck,
 } from "react-icons/hi2";
 import Feature from "../components/Feature";
-import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 const Homepage = () => {
   return (
@@ -22,9 +22,9 @@ const Homepage = () => {
             Scelerisque dolor magna dolor libero iaculis.
           </p>
           <div className="max-w-52">
-            <button className="bg-darkSlate text-white py-2.5 rounded-full w-full hover:rounded-md transition-all duration-500">
-              Explore Products
-            </button>
+            <Button>
+              <span className="relative z-10">Start Exploring</span>
+            </Button>
           </div>
         </div>
         <div>
@@ -80,6 +80,26 @@ const Homepage = () => {
             alt="Shopping Experience"
             className="w-full h-auto rounded-lg"
           />
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="flex justify-between items-center">
+          <div className="max-w-3xl space-y-5">
+            <h1 className="heading-secondary">
+              Ready to explore online world?
+            </h1>
+            <p className="text-textGray">
+              Discover the endless possibilities of online shopping with our
+              easy-to-use platform. From exclusive deals to a wide range of
+              products, we make your shopping experience effortless and
+              enjoyable. Start your journey with us and find everything you need
+              at your fingertips.
+            </p>
+          </div>
+          <Button>
+            <span className="relative z-10">Start Shopping</span>
+          </Button>
         </div>
       </section>
     </div>
