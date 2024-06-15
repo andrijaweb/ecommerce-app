@@ -33,3 +33,23 @@
     @apply whitespace-nowrap w-[3.75rem] h-[3.75rem] rounded-lg bg-no-repeat bg-[50%_50%] bg-[length:3.75rem_3.75rem] relative -bottom-3.5 inline-block mx-4;
   }
 }
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #1a2e35;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
