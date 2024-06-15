@@ -29,6 +29,10 @@
     @apply rounded-full hover:before:bg-darkSlate relative overflow-hidden border border-darkSlate bg-white px-3 text-darkSlate transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-darkSlate before:transition-all before:duration-500 hover:text-white hover:shadow-darkSlate hover:before:left-0 hover:before:w-full;
   }
 
+  .button-pagination {
+    @apply flex items-center justify-center gap-2 px-5 py-2 rounded-full text-darkSlate border border-transparent transition-all duration-300 hover:bg-slateTeal hover:border-slateTeal hover:text-white;
+  }
+
   .image-mini {
     @apply whitespace-nowrap w-[3.75rem] h-[3.75rem] rounded-lg bg-no-repeat bg-[50%_50%] bg-[length:3.75rem_3.75rem] relative -bottom-3.5 inline-block mx-4;
   }
