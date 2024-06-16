@@ -26,6 +26,7 @@ const Pagination = ({ count }: PaginationType) => {
     searchParams.set("page", next.toString());
     setSearchParams(searchParams);
   }
+
   function handlePrevPage() {
     const prev = curPage === 1 ? curPage : curPage - 1;
 
