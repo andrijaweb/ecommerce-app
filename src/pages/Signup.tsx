@@ -1,9 +1,9 @@
-const Login = () => {
+const Signup = () => {
   return (
     <div className="px-16 py-10 bg-lightGray border border-darkGray rounded-lg">
-      Login
+      Signup
     </div>
   );
 };
 
-export default Login;
+export default Signup;

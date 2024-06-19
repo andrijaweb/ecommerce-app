@@ -9,6 +9,8 @@ import StorePage from "./pages/StorePage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
+import AuthLayout from "./features/authentication/AuthLayout";
+import Signup from "./pages/Signup";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +40,10 @@ const App = () => {
             <Route path="about" element={<About />} />
           </Route>
 
+          <Route element={<AuthLayout />}>
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+          </Route>
           <Route path="login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
