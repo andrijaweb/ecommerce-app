@@ -13,21 +13,21 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { loginValidation } from "@/features/authentication/validation";
+import {
+  loginValidation,
+  signupValidation,
+} from "@/features/authentication/validation";
 
 import { Link } from "react-router-dom";
-import { useLogin } from "@/features/authentication/useLogin";
-import Spinner from "../components/Spinner";
-import { useUser } from "@/features/authentication/useUser";
+import Spinner from "../../../components/Spinner";
 
-const Login = () => {
-  const { login, isPending } = useLogin();
-  const { user } = useUser();
-  console.log(user);
+const SignupForm = () => {
+  const isPending = false;
 
-  const form = useForm<z.infer<typeof loginValidation>>({
-    resolver: zodResolver(loginValidation),
+  const form = useForm<z.infer<typeof signupValidation>>({
+    resolver: zodResolver(signupValidation),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -38,32 +38,37 @@ const Login = () => {
     console.log(values);
 
     if (!values) return;
-
-    const { email, password } = values;
-
-    login({ email, password });
   }
 
   return (
     <div className="sm:w-[35rem] px-16 py-10 bg-lightGray border border-darkGray rounded-lg mx-auto">
       <Form {...form}>
         <h3 className="heading-tertiary mb-5 text-center">
-          Log in to your account
+          Create a new account
         </h3>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="shad-form_label">Username</FormLabel>
+                <FormControl>
+                  <Input type="text" className="shad-input" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="shad-form_label">Email</FormLabel>
                 <FormControl>
-                  <Input
-                    type="text"
-                    disabled={isPending}
-                    placeholder="andrija@office.com"
-                    {...field}
-                  />
+                  <Input type="text" className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -75,23 +80,23 @@ const Login = () => {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
+                <FormLabel className="shad-form_label">Password</FormLabel>
                 <FormControl>
-                  <Input disabled={isPending} type="password" {...field} />
+                  <Input type="password" className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
 
-          <Button type="submit" disabled={isPending}>
+          <Button type="submit" disabled={isPending} className="w-full">
             {!isPending ? "Log in" : <Spinner />}
           </Button>
 
           <p className="text-textGray text-center">
-            Don&apos;t have an account?
-            <Link to="/signup" className="text-blue-500 ml-1">
-              Sign up
+            Already have an account?
+            <Link to="/login" className="text-blue-500 ml-1">
+              Sign in
             </Link>
           </p>
         </form>
@@ -100,4 +105,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignupForm;
