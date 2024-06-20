@@ -18,9 +18,12 @@ import { loginValidation } from "@/features/authentication/validation";
 import { Link } from "react-router-dom";
 import { useLogin } from "@/features/authentication/useLogin";
 import Spinner from "../components/Spinner";
+import { useUser } from "@/features/authentication/useUser";
 
 const Login = () => {
   const { login, isPending } = useLogin();
+  const { user } = useUser();
+  console.log(user);
 
   const form = useForm<z.infer<typeof loginValidation>>({
     resolver: zodResolver(loginValidation),
