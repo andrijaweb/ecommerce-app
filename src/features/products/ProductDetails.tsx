@@ -1,15 +1,17 @@
-import Button from "../../components/Button";
 import Broadcrumb from "../../components/Breadcrumb";
 import { useProduct } from "./useProduct";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import ProductCarousel from "@/components/ProductCarousel";
+import { useRecommendedProducts } from "./useRecommendedProducts";
 
 const ProductDetails = () => {
   const { isLoading, product } = useProduct();
   console.log(isLoading, product);
+  const { recommendedProducts } = useRecommendedProducts();
 
   if (!product) return null;
 
-  const { images, description, category, name, price, sku, stock } = product;
+  const { images, description, category, name, price, sku } = product;
 
   return (
     <div className="max-w-container mx-auto py-16 px-8">
@@ -54,6 +56,13 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      {recommendedProducts && (
+        <div className="py-16">
+          <h2 className="heading-secondary mb-5">Related Products</h2>
+          <ProductCarousel products={recommendedProducts} />
+        </div>
+      )}
     </div>
   );
 };
