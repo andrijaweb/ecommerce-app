@@ -1,4 +1,4 @@
-import Broadcrumb from "../components/Breadcrumb";
+import Broadcrumb from "../../components/Breadcrumb";
 
 const ProductDetails = () => {
   return (
@@ -7,7 +7,7 @@ const ProductDetails = () => {
         items={[
           { name: "Store", link: "/store" },
           { name: "Clothes", link: "/store/clothes" },
-          { name: "Black Hoodie", link: "" },
+          { name: "Black Hoodie" },
         ]}
       />
     </div>
