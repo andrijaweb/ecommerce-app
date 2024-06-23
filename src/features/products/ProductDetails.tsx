@@ -6,12 +6,13 @@ import { useRelatedProducts } from "./useRelatedProducts";
 
 const ProductDetails = () => {
   const { isLoading, product } = useProduct();
+  const { relatedProducts } = useRelatedProducts(
+    product ? product.category : null
+  );
 
   if (!product) return null;
 
   const { images, description, category, name, price, sku } = product;
-
-  const { relatedProducts } = useRelatedProducts(category);
 
   return (
     <div className="max-w-container mx-auto py-16 px-8">
