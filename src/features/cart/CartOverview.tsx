@@ -18,11 +18,11 @@ const CartOverview = () => {
       <ul className="space-y-2.5 my-5">
         <li className="text-textGray flex items-center justify-between">
           <p>Subtotal</p>
-          <p>${totalCartPrice}</p>
+          <p>${totalCartPrice.toFixed(2)}</p>
         </li>
         <li className="text-textGray flex items-center justify-between">
           <p>Shipping</p>
-          <p>${shippingPrice}</p>
+          <p>${shippingPrice.toFixed(2)}</p>
         </li>
         <li className="text-textGray flex items-center justify-between">
           <p>Tax</p>
@@ -30,7 +30,14 @@ const CartOverview = () => {
         </li>
         <li className="pt-5 text-textGray font-semibold flex items-center justify-between border-t border-darkGray">
           <p>Grand Total</p>
-          <p>${calculateGrandTotal(totalCartPrice, shippingPrice, taxPrice)}</p>
+          <p>
+            $
+            {calculateGrandTotal(
+              totalCartPrice,
+              shippingPrice,
+              taxPrice
+            ).toFixed(2)}
+          </p>
         </li>
       </ul>
       <Button className="w-full">Checkout</Button>
