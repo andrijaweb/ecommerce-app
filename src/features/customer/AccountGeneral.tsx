@@ -13,9 +13,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { HiOutlineTruck } from "react-icons/hi2";
 
-const CreateNewOrder = () => {
+const AccountGeneral = () => {
   const form = useForm<z.infer<typeof orderValidation>>({
     resolver: zodResolver(orderValidation),
     defaultValues: {
@@ -37,15 +36,10 @@ const CreateNewOrder = () => {
 
   return (
     <Form {...form}>
-      <div className="mx-auto max-w-3xl pt-8 pb-16 space-y-10">
-        <h2 className="heading-secondary mb-2.5 text-center">
-          Create new order
-        </h2>
+      <div className="p-2.5 space-y-5">
+        <h2 className="heading-tertiary">General Settings</h2>
 
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="mx-auto max-w-xl space-y-4"
-        >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -138,23 +132,13 @@ const CreateNewOrder = () => {
             />
           </div>
 
-          <div>
-            <Button type="submit" className="w-full text-md" size="lg">
-              <span>
-                <HiOutlineTruck className="text-2xl mr-2" />
-              </span>
-              Place Order
-            </Button>
-            <p className="text-xs text-textGray mt-2">
-              Please fill the form above in order to continue. Remember do not
-              use real data because this is a test application and your data can
-              possibly get leaked!
-            </p>
-          </div>
+          <Button type="submit" className="">
+            Update profile
+          </Button>
         </form>
       </div>
     </Form>
   );
 };
 
-export default CreateNewOrder;
+export default AccountGeneral;
