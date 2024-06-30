@@ -1,3 +1,4 @@
+import { UserAttributes } from "@supabase/supabase-js";
 import supabase from "./supabase";
 
 type SignupProps = {
@@ -9,6 +10,11 @@ type SignupProps = {
 type LoginProps = {
   email: string;
   password: string;
+};
+
+type updateUserProps = {
+  password?: string;
+  fullName?: string;
 };
 
 export async function signup({ name, email, password }: SignupProps) {
@@ -53,4 +59,16 @@ export async function getCurrentUser() {
 export async function logout() {
   const { error } = await supabase.auth.signOut();
   if (error) throw new Error(error.message);
+}
+
+export async function updateUser({ password, fullName }: updateUserProps) {
+  let updateValue: Partial<UserAttributes> = {};
+  if (password) updateValue.password = password;
+  if (fullName) updateValue.data = { fullName };
+
+  const { data, error } = await supabase.auth.updateUser(updateValue);
+
+  if (error) throw new Error(error.message);
+
+  return data;
 }
