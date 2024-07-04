@@ -1,3 +1,4 @@
+import { addDays, format } from "date-fns";
 import { FLAT_SHIPPING_RATE, TAX_RATE } from "./constants";
 
 export function capitalizeFirstLetter(
@@ -23,4 +24,13 @@ export const calculateGrandTotal = (
   tax: number
 ): number => {
   return subtotal + shipping + tax;
+};
+
+export const getEstimatedDeliveryDate = (
+  createdAt: string,
+  daysToAdd: number = 3
+): string => {
+  const createdDate = new Date(createdAt);
+  const estimatedDeliveryDate = addDays(createdDate, daysToAdd);
+  return format(estimatedDeliveryDate, "MMMM d, yyyy, hh:mm a");
 };
