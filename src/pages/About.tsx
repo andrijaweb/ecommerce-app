@@ -19,7 +19,7 @@ const About = () => {
             <HiArrowLongDown />
           </span>
         </Button>
-        <img src="image-group.jpg" alt="About hero" />
+        <img loading="lazy" src="image-group.jpg" alt="About hero" />
       </section>
 
       <section
@@ -28,6 +28,7 @@ const About = () => {
       >
         <div className="overflow-hidden rounded-lg">
           <img
+            loading="lazy"
             className="w-full max-h-[600px] object-cover transition-all duration-500 hover:scale-110"
             src="/team.jpg"
             alt="Group of people"
