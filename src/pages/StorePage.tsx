@@ -40,11 +40,10 @@ const StorePage = () => {
                 options={[
                   { value: "all", label: "All" },
                   { value: "clothes", label: "Clothes" },
-                  { value: "outdoor-&-sports", label: "Outdoor & Sports" },
-                  { value: "furniture", label: "Furniture" },
-                  { value: "gaming", label: "Gaming" },
                   { value: "shoes", label: "Shoes" },
-                  { value: "accessories", label: "Accessories" },
+                  { value: "electronics", label: "Electronics" },
+                  { value: "furniture", label: "Furniture" },
+                  { value: "miscellaneous", label: "Miscellaneous" },
                 ]}
               />
             </div>
