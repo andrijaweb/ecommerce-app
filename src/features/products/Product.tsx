@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { capitalizeFirstLetter } from "../../lib/helpers";
-import { Button } from "@/components/ui/button";
 import { useSelector } from "react-redux";
 import { getCurrentQuantityById } from "../cart/cartSlice";
 import DeleteCartItem from "../cart/DeleteCartItem";
 import EditCartItemQty from "../cart/EditCartItemQty";
 import AddItemToCart from "../cart/AddItemToCart";
+import BuyNowButton from "@/components/BuyNowButton";
 
 type ProductType = {
   product: product;
@@ -43,7 +43,7 @@ const Product = ({ product }: ProductType) => {
           <>
             <AddItemToCart product={product} />
 
-            <Button className="w-full">Buy Now</Button>
+            <BuyNowButton product={product} />
           </>
         )}
       </div>
