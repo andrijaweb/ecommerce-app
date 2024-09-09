@@ -55,7 +55,7 @@ const CreateNewOrder = () => {
               {
                 onSuccess: (createdOrder) => {
                   navigate(`/order/${createdOrder.id}`);
-                  dispatch(clearCart());
+                  setTimeout(() => dispatch(clearCart()), 100);
                 },
               }
             );
@@ -68,7 +68,7 @@ const CreateNewOrder = () => {
         {
           onSuccess: (createdOrder) => {
             navigate(`/order/${createdOrder.id}`);
-            dispatch(clearCart());
+            setTimeout(() => dispatch(clearCart()), 100);
           },
         }
       );
