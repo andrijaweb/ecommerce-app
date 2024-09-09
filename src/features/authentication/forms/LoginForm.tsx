@@ -1,6 +1,6 @@
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import {
   Form,
@@ -11,18 +11,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { loginValidation } from "@/lib/validation";
 
-import { Link } from "react-router-dom";
 import { useLogin } from "@/features/authentication/useLogin";
+import { Link } from "react-router-dom";
 import Spinner from "../../../components/Spinner";
-import { useUser } from "@/features/authentication/useUser";
 
 const LoginForm = () => {
   const { login, isPending } = useLogin();
-  const { user } = useUser();
 
   const form = useForm<z.infer<typeof loginValidation>>({
     resolver: zodResolver(loginValidation),
